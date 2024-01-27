@@ -1,23 +1,75 @@
 # Welcome to my study area!
 
+I started this project using WSL (Windows Subsystem for Linux), but I faced some difficulties that were taking up a lot of my time so I decided to work directly on an Ubuntu operating system.
+
+I will try to leave a step-by-step guide here so that you can download and run the project locally on your machine, but I will only focus on the instructions for Linux. (To users of other OS, I apologize!)
+
+First of all, the project is being developed in Python. Let's start by installing 'pyenv'. It is a Python version management tool that allows you to easily install, manage, and switch between multiple versions of Python on your system.
+
+## pyenv - python version management tool
+
+```
+# Step 1: Install Dependencies
+
+sudo apt-get update
+sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+
+# Step 2: Install pyenv
+curl https://pyenv.run | bash
+
+# Step 3: Add pyenv to your shell (Here we are using the bash shell). Copy the following commands to your '.bashrc':
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Reload your bashrc:
+source ~/.bashrc
+
+# Step 4: Install Python versions using pyenv
+
+pyenv install 3.12.1
+
+# Step 5: Set Global and Local Python Versions
+
+pyenv global 3.12.1
+
+# Step 6: Set a local Python version for a specific project (run this command in the project directory):
+
+pyenv local 3.12.1
+```
+
+## Creating our virtual environment:
+```
+pyenv virtualenv 3.12.1 venv
+pyenv activate venv
+```
+
+## Installing our dependencies:
+```
+pip install -r requirements.txt
+```
+Now, as the next step, to run our Seleninum tests we will need a webdrive available. Let's configure it now.
+
 ## Install a WebDriver (e.g., ChromeDriver)
 
-Selenium requires a WebDriver to interact with web browsers. For Chrome, you can use ChromeDriver.
+```
+# Selenium requires a WebDriver to interact with web browsers. For Chrome, you can use ChromeDriver.
 
-Download ChromeDriver:
-Visit the ChromeDriver downloads page.
-Download the version corresponding to your Chrome browser version.
-Extract the downloaded ZIP file.
+# Download ChromeDriver:
+# Visit the ChromeDriver downloads page.
+# Download the version corresponding to your Chrome browser version.
+# Extract the downloaded ZIP file.
 
 ### Add ChromeDriver to PATH:
 
-On Linux or macOS, you can move the chromedriver executable to a directory in your PATH:
+# On Linux or macOS, you can move the chromedriver executable to a directory in your PATH:
 
-```
 sudo mv /path/to/chromedriver /usr/local/bin/
-```
 
-On Windows, you can add the directory containing 'chromedriver.exe' to your system's PATH.
+# On Windows, you can add the directory containing 'chromedriver.exe' to your system's PATH.
+```
 
 After installation, you can verify that Behave and Selenium are installed correctly:
 
@@ -34,8 +86,8 @@ If everything is set up correctly, you should see the versions of Behave and Sel
 ### Commands to run our application:
 
 ```
-# Activate the virtual environment
-source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+# If you are not inside the virtual environment, you need to activate:
+pyenv activate venv
 
 # Install dependencies
 pip install -r requirements.txt
