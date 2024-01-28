@@ -1,5 +1,3 @@
-<!-- app/templates/add_task.html -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,12 +10,12 @@
 
     <form method="post" action="{{ url_for('tasks.add_task') }}">
       <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required /><br />
+      <input type="text" id="task-title-input" name="task-title-input" required /><br />
 
       <label for="description">Description:</label>
-      <textarea id="description" name="description" required></textarea><br />
+      <textarea id="task-description-input" name="task-description-input" required></textarea><br />
 
-      <button type="submit">Add Task</button>
+      <button type="submit" id="task-add-button">Add Task</button>
     </form>
   </body>
 </html>
