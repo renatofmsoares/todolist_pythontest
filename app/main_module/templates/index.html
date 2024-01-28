@@ -6,7 +6,7 @@
     <title>To-Do List</title>
   </head>
   <body>
-    <h1>To-Do List</h1>
+    <h1>To-Do List ()</h1>
 
     <ul id='task-list'>
       {% for task in tasks %}
@@ -14,6 +14,6 @@
       {% endfor %}
     </ul>
 
-    <a href="{{ url_for('tasks.add_task_form') }}" id="add-task-button">Add Task</a>
+    <a href="{{ url_for('tasks_module.add_task') }}" id="add-task-button">Add Task</a>
   </body>
 </html>
