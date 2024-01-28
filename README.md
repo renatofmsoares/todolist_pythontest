@@ -1,6 +1,26 @@
 # Welcome to my study area!
 
+My goal here is to create a ToDo List system using in python using BDD and TDD.
+
+I want that at the end of this project I can use it to demonstrate my experience with python in developing a web application using testing frameworks, automated scripts, integration with AWS, version control, documentation, database testing and integration with CI /CD.
+
+### Current Application Overview:
+
+- This to-do list application is being built using Flask, a Python web framework.
+- BDD is being applied (Behavior Driven Development).
+- The modules are being encapsulated using Blueprint.
+
+### Current State:
+
+- Basic routing and views for displaying and adding tasks have already been implemented.
+- Tasks are stored in memory as a list (**`tasks`**) in the **`routes.py`** file, simulating a simple data layer.
+- The application uses the Flask app factory pattern, and we have registered a blueprint for handling tasks (**`routes.py`**).
+
+### Some difficulties encountered along the way:
+
 I started this project using WSL (Windows Subsystem for Linux), but I faced some difficulties that were taking up a lot of my time so I decided to work directly on an Ubuntu operating system.
+
+# Let's get this project running on your machine:
 
 I will try to leave a step-by-step guide here so that you can download and run the project locally on your machine, but I will only focus on the instructions for Linux. (To users of other OS, I apologize!)
 
@@ -97,3 +117,8 @@ python run.py
 ```
 
 Open your browser and go to http://127.0.0.1:5000/ to view the to-do list application.
+
+### Run the behave tests
+```
+behave -t ~ForFutureImplementation
+```
