@@ -1,5 +1,6 @@
 Feature: Add Task Functionality
   
+  @implemented
   Scenario: User adds a new task
     Given the user is on the homepage
     When the user clicks on the "Add Task" button
