@@ -1,20 +1,33 @@
 # Welcome to my study area!
 
-My goal here is to create a ToDo List system using in python using BDD and TDD.
+My goal here is to create a ToDo List system using in python using BDD.
 
 I want that at the end of this project I can use it to demonstrate my experience with python in developing a web application using testing frameworks, automated scripts, integration with AWS, version control, documentation, database testing and integration with CI /CD.
 
-### Current Application Overview:
+### Planned step by step:
+✅ Step 1: Set Up the Development Environment (Pyhton Virtual Environment) \
+✅ Step 2: Choose a Web Framework (Flask) \
+✅ Step 3: Create a basic To-Do List App \
+✅ Step 4: Create HTML Templates \
+✅ Step 5: Test Locally \
+⏳ Step 6: Set Up AWS for Deployment \
+⏳ Step 7: Optional Enhancements: \
+    --> ⏳ Implements CRUD \
+    --> ⏳ Due dates \
+    --> ⏳ User authentication
 
-- This to-do list application is being built using Flask, a Python web framework.
-- BDD is being applied (Behavior Driven Development).
-- The modules are being encapsulated using Blueprint.
+### Current Development Overview:
 
-### Current State:
+- This to-do list application is being built using **Flask**, a Python web framework.
+- **BDD** is being applied (Behavior Driven Development).
+- The modules are being encapsulated using **Blueprint**.
+
+### Current Application State:
 
 - Basic routing and views for displaying and adding tasks have already been implemented.
-- Tasks are stored in memory as a list (**`tasks`**) in the **`routes.py`** file, simulating a simple data layer.
-- The application uses the Flask app factory pattern, and we have registered a blueprint for handling tasks (**`routes.py`**).
+- Tasks are stored in memory as a list (**`tasks`**) simulating a simple data layer.
+- The application uses the **Flask** app factory pattern, and we have registered a blueprint for handling tasks.
+- The process of creating a new task already has an automated test using **Behave**
 
 ### Some difficulties encountered along the way:
 
