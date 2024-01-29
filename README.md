@@ -1,6 +1,6 @@
 # Welcome to my study area!
 
-My goal here is to create a ToDo List system using in python using BDD and TDD.
+My goal here is to create a ToDo List system using in python using BDD.
 
 I want that at the end of this project I can use it to demonstrate my experience with python in developing a web application using testing frameworks, automated scripts, integration with AWS, version control, documentation, database testing and integration with CI /CD.
 
