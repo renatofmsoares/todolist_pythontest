@@ -1,7 +1,11 @@
-from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Task
+from flask import render_template, Blueprint
+from flask import request, redirect, url_for
 
-bp = Blueprint('tasks', __name__)
+from app.tasks_module.models import Task
+
+tasks_blueprint = Blueprint("tasks_module", __name__,
+    template_folder='templates',
+    static_folder='static')
 
 # Dummy data (replace with actual data or database integration)
 tasks = [
@@ -10,15 +14,15 @@ tasks = [
     Task('Task 3', 'Description for Task 3'),
 ]
 
-@bp.route('/')
+@tasks_blueprint.route('/')
 def index():
     return render_template('index.html', tasks=tasks)
 
-@bp.route('/add_task', methods=['GET'])
+@tasks_blueprint.route('/add_task', methods=['GET'])
 def add_task_form():
     return render_template('add_task.html')
 
-@bp.route('/add_task', methods=['POST'])
+@tasks_blueprint.route('/add_task', methods=['POST'])
 def add_task():
     title = request.form.get('task-title-input')
     description = request.form.get('task-description-input')
@@ -28,4 +32,5 @@ def add_task():
     tasks.append(new_task)
     print(new_task.__getstate__())
 
-    return redirect(url_for('tasks.index'))
+    return render_template('index.html', tasks=tasks)
+
