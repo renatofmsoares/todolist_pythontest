@@ -6,9 +6,9 @@
     <title>Add Task</title>
   </head>
   <body>
-    <h2>Add Task</h2>
+    <h2>Add Task MAIN MODULE</h2>
 
-    <form method="post" action="{{ url_for('tasks.add_task') }}">
+    <form method="post" action="{{ url_for('tasks_module.add_task') }}">
       <label for="title">Title:</label>
       <input type="text" id="task-title-input" name="task-title-input" required /><br />
 
